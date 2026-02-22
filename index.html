@@ -29,7 +29,7 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Animations (Only for the top section now) --- */
+        /* --- CSS Animations (100% Safe & Visible) --- */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -39,6 +39,17 @@
             0% { text-shadow: 0 0 10px var(--accent-glow); }
             50% { text-shadow: 0 0 30px var(--accent-bright), 0 0 10px var(--accent-bright); }
             100% { text-shadow: 0 0 10px var(--accent-glow); }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes borderPulse {
+            0% { border-color: rgba(139, 92, 246, 0.2); box-shadow: 0 0 5px rgba(139, 92, 246, 0.1); }
+            50% { border-color: rgba(139, 92, 246, 0.6); box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); }
+            100% { border-color: rgba(139, 92, 246, 0.2); box-shadow: 0 0 5px rgba(139, 92, 246, 0.1); }
         }
 
         /* --- Navigation --- */
@@ -79,7 +90,7 @@
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 15px;
-            animation: fadeInDown 1s ease-out;
+            animation: fadeInDown 0.8s ease-out forwards;
         }
 
         .hero h1 span {
@@ -91,7 +102,7 @@
             color: var(--text-muted);
             max-width: 600px;
             margin-bottom: 30px;
-            animation: fadeInDown 1.2s ease-out;
+            animation: fadeInDown 1s ease-out forwards;
         }
 
         .btn {
@@ -105,7 +116,7 @@
             cursor: pointer;
             text-decoration: none;
             transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInDown 1.4s ease-out;
+            animation: fadeInDown 1.2s ease-out forwards;
         }
 
         .btn:hover {
@@ -119,6 +130,8 @@
             font-size: 2.5rem;
             margin: 80px 0 40px;
             padding-top: 60px;
+            opacity: 0;
+            animation: popIn 0.8s ease-out 0.2s forwards;
         }
 
         .grid-container {
@@ -132,7 +145,6 @@
 
         .card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
@@ -140,7 +152,15 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(5px);
+            opacity: 0;
+            animation: popIn 0.6s ease-out forwards, borderPulse 3s infinite;
         }
+
+        /* Staggered load times so they pop in one by one safely */
+        .grid-container .card:nth-child(1) { animation-delay: 0.3s, 0s; }
+        .grid-container .card:nth-child(2) { animation-delay: 0.5s, 0s; }
+        .grid-container .card:nth-child(3) { animation-delay: 0.7s, 0s; }
+        .grid-container .card:nth-child(4) { animation-delay: 0.9s, 0s; }
 
         .card::before {
             content: '';
@@ -153,7 +173,8 @@
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--accent-bright);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+            animation-play-state: paused; /* Stops pulsing when hovering */
         }
 
         .card:hover::before {
