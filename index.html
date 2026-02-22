@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mycroft's Store | Premium Credits & Accounts</title>
     <style>
+        /* --- Base Styles & Variables --- */
         :root {
             --bg-color: #0d0e15;
             --text-main: #ffffff;
@@ -28,6 +29,7 @@
             scroll-behavior: smooth; 
         }
 
+        /* --- Animations --- */
         @keyframes pulseGlow {
             0% { text-shadow: 0 0 10px var(--accent-glow); }
             50% { text-shadow: 0 0 30px var(--accent-bright), 0 0 10px var(--accent-bright); }
@@ -40,6 +42,7 @@
             100% { border-color: rgba(139, 92, 246, 0.2); box-shadow: 0 0 5px rgba(139, 92, 246, 0.1); }
         }
 
+        /* --- Navigation Index --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -64,13 +67,15 @@
 
         .nav-index {
             display: flex;
-            gap: 25px;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-index a {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             transition: color 0.3s, text-shadow 0.3s;
         }
@@ -80,6 +85,7 @@
             text-shadow: 0 0 10px var(--accent-glow);
         }
 
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -113,6 +119,7 @@
             box-shadow: 0 0 20px var(--accent-glow);
         }
 
+        /* --- Store Sections --- */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -169,6 +176,14 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; padding: 15px; }
+            .section-title { padding-top: 140px; }
+            .hero h1 { font-size: 3rem; }
+        }
+
+        /* --- Floating Chat Button --- */
         .floating-chat {
             position: fixed;
             bottom: 30px;
@@ -220,12 +235,13 @@
         <div class="nav-index">
             <a href="#games">🎮 Gaming</a>
             <a href="#streaming">📺 Streaming</a>
+            <a href="#productivity">🛠️ Productivity & Apps</a>
         </div>
     </nav>
 
     <header class="hero">
         <h1>Level Up <span>For Less</span></h1>
-        <p>Your premium hub for discounted in-game credits and top-tier streaming accounts. Fast delivery, 100% secure.</p>
+        <p>Your premium hub for discounted in-game credits, streaming accounts, and pro software. Fast delivery, 100% secure.</p>
         <a href="#games" class="btn">Shop Now</a>
     </header>
 
@@ -252,11 +268,31 @@
                 <p>CP Top-ups for Mobile & Warzone</p>
                 <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
             </div>
+            <div class="card">
+                <h3>Blood Strike</h3>
+                <p>Instant Gold & Battle Pass</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>PUBG Mobile</h3>
+                <p>Discounted UC & Royale Pass</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>Free Fire</h3>
+                <p>Instant Diamonds & Booyah Pass</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>Roblox</h3>
+                <p>Cheap Robux & Premium Subs</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
         </div>
     </section>
 
     <section id="streaming" style="margin-top: 50px;">
-        <h2 class="section-title">Premium Accounts</h2>
+        <h2 class="section-title">Premium Streaming</h2>
         <div class="grid-container">
             <div class="card">
                 <h3>Netflix</h3>
@@ -271,6 +307,52 @@
             <div class="card">
                 <h3>HBO Max</h3>
                 <p>Premium 4K & Ad-Free Shows</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>Spotify Premium</h3>
+                <p>Ad-free music & offline listening</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>Amazon Prime Video</h3>
+                <p>Exclusive Movies & TV Shows</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>Crunchyroll</h3>
+                <p>Mega Fan Ad-Free Anime</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>YouTube Premium</h3>
+                <p>Ad-Free Videos & YouTube Music</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="productivity" style="margin-top: 50px;">
+        <h2 class="section-title">Productivity & Apps</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Canva Pro</h3>
+                <p>Premium Templates, Fonts & Assets</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>CapCut Pro</h3>
+                <p>Advanced Video Editing Tools & Effects</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>ChatGPT Plus</h3>
+                <p>GPT-4 Access & Faster Responses</p>
+                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
+            </div>
+            <div class="card">
+                <h3>Microsoft 365</h3>
+                <p>Word, Excel, PowerPoint & 1TB OneDrive</p>
                 <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
             </div>
         </div>
