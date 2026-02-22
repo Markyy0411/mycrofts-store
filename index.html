@@ -41,15 +41,8 @@
             100% { text-shadow: 0 0 10px var(--accent-glow); }
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .fade-in {
+            animation: fadeInDown 1.5s ease-out;
         }
 
         /* --- Navigation --- */
@@ -129,7 +122,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin: 80px 0 40px;
-            padding-top: 60px; /* Offset for fixed nav */
+            padding-top: 60px;
         }
 
         .grid-container {
@@ -197,104 +190,4 @@
         .card-btn:hover {
             background: var(--accent-bright);
             color: white;
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-
-        /* --- Floating Chat Button --- */
-        .floating-chat {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(45deg, #0084ff, #00c6ff);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
-            z-index: 9999;
-        }
-
-        .floating-chat:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 132, 255, 0.6);
-        }
-
-        /* --- Footer & Socials --- */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-        }
-
-        .social-links {
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            color: var(--accent-bright);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .social-links a:hover {
-            color: white;
-            text-shadow: 0 0 10px var(--accent-glow);
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#" class="logo">MYCROFT'S STORE</a>
-    </nav>
-
-    <header class="hero">
-        <h1>Level Up <span>For Less</span></h1>
-        <p>Your premium hub for discounted in-game credits and top-tier streaming accounts. Fast delivery, 100% secure.</p>
-        <a href="#games" class="btn">Shop Now</a>
-    </header>
-
-    <section id="games" class="reveal">
-        <h2 class="section-title">In-Game Credits</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Mobile Legends</h3>
-                <p>Instant Diamonds & Twilight Passes</p>
-                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
-            </div>
-            <div class="card">
-                <h3>Valorant</h3>
-                <p>Discounted VP for your next Night Market</p>
-                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
-            </div>
-            <div class="card">
-                <h3>Genshin Impact</h3>
-                <p>Genesis Crystals & Welkin Moon</p>
-                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
-            </div>
-            <div class="card">
-                <h3>Call of Duty</h3>
-                <p>CP Top-ups for Mobile & Warzone</p>
-                <a href="https://www.messenger.com/t/rizz.coconutzz" target="_blank" class="card-btn">Message to Buy</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="accounts" class="reveal" style="margin-top: 50px;">
-        <h2 class="section-title">Premium Accounts</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Netflix</h3>
-                <p>UHD 4K Shared & Solo Profiles</p>
-                <a href="https://www
+            box
